@@ -4,6 +4,7 @@ const chalk = require('chalk');
 let ovh = {requestPromised: () => Promise.reject("OVH not configured")};
 try {
     ovh = require('ovh')({
+        endpoint: process.env.OVH_ENDPOINT || 'ovh-eu',
         appKey: process.env.OVH_APPLICATION_KEY,
         appSecret: process.env.OVH_APPLICATION_SECRET,
         consumerKey: process.env.OVH_CONSUMER_KEY

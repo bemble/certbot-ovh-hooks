@@ -41,6 +41,13 @@ const apiDetails = async () => {
     const questions = [
         {
             type: 'input',
+            name: 'OVH_ENDPOINT',
+            message: "API endpoint",
+            default: process.env.OVH_ENDPOINT || 'ovh-eu',
+            validate: (value) => !!value.length || 'Please enter the API endpoint'
+        },
+        {
+            type: 'input',
             name: 'OVH_APPLICATION_KEY',
             message: "Application key",
             default: process.env.OVH_APPLICATION_KEY,
