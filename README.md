@@ -1,2 +1,41 @@
 # certbot-ovh-hooks
-Hooks, in NodeJS, to handle manual certbot queries with domains registred at OVH.
+> Hooks, in NodeJS, to handle manual certbot queries with domains registred at OVH.
+
+## Install
+
+```bash
+npm i -g certbot-ovh-hooks
+```
+
+## Configure
+
+Simply run the following command:
+```bash
+coh-configure
+```
+Or copy `.env.sample` to `.env` and edit manually.
+
+## Some checks
+
+This will check if the configuration is done, your domains list and a reminder on request/renew certs etc.
+```bash
+coh-about
+```
+
+## Query a certificate
+
+```bash
+certbot certonly --manual --preferred-challenges=dns --manual-auth-hook coh-auth --manual-cleanup-hook coh-cleanup -d example.com -d www.example.com
+```
+
+## Renew certificates
+
+### Standard
+```bash
+certbot renew --quiet
+```
+
+### When using Nginx
+```bash
+certbot renew --quiet --deploy-hook "service nginx reload"
+```
