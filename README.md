@@ -7,6 +7,14 @@
 npm i -g certbot-ovh-hooks
 ```
 
+## Update
+
+```bash
+cp -p `npm root -g`/certbot-ovh-hooks/.env /tmp/coh_env_bu && \
+  npm i -g certbot-ovh-hooks && \
+  mv /tmp/coh_env_bu `npm root -g`/certbot-ovh-hooks/.env
+```
+
 ## Configure
 
 Simply run the following command:
