@@ -1,6 +1,8 @@
 # certbot-ovh-hooks
 > Hooks, in NodeJS, to handle manual certbot queries with domains registred at OVH.
 
+It requires **Node 8+**.
+
 ## Install
 
 ```bash
@@ -37,6 +39,8 @@ certbot certonly --manual --preferred-challenges=dns --manual-auth-hook coh-auth
 ```
 
 ## Renew certificates
+
+**If you have certificates queried without hooks, you must re-query these certificate to be able to renew them.**
 
 ### Standard
 ```bash
