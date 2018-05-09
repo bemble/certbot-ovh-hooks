@@ -51,3 +51,13 @@ certbot renew --quiet
 ```bash
 certbot renew --quiet --deploy-hook "service nginx reload"
 ```
+
+## Other stuff
+
+### And domain
+
+Because sometimes you just want to quickly add/update a domain that point on your server (`A` or `AAAA` DNS record):
+```bash
+coh-add-domain
+```
+Note: this will **not** call `certbot` automatically, it just allows you to add/update `A` or `AAAA` records quickly.
