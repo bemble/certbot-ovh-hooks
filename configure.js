@@ -30,8 +30,10 @@ const createApiAccess = async () => {
     }]);
 
     if (!hasAlreadyCredentials) {
-        console.log(chalk.blue('In the window that will open in 5 seconds, create {GET,POST,PUT,DELETE} for "/domain" and "/domain/*" with an unlimited lifetime.'));
-        setTimeout(() => opn('https://api.ovh.com/createToken/', {wait: false}), 5000);
+        const createTokenUrl = 'https://api.ovh.com/createToken/';
+        console.log(chalk.blue('In the window that will open in 5 seconds, create {GET,POST,PUT,DELETE} for "/domain" and "/domain/*" with an unlimited validity.'));
+        console.log(chalk.yellow(`If your on a headless server, just go to "${createTokenUrl}".`));
+        setTimeout(() => opn(createTokenUrl, {wait: false}), 5000);
     }
 };
 
