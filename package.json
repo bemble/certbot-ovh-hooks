@@ -1,6 +1,6 @@
 {
   "name": "certbot-ovh-hooks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Hooks to handle manual certbot queries with domains registred at OVH.",
   "main": "configure.js",
   "scripts": {

@@ -1,11 +1,16 @@
 require('dotenv').config({path: `${__dirname}/.env`});
 const chalk = require('chalk');
 
-const ovh = require('ovh')({
-    appKey: process.env.OVH_APPLICATION_KEY,
-    appSecret: process.env.OVH_APPLICATION_SECRET,
-    consumerKey: process.env.OVH_CONSUMER_KEY
-});
+let ovh = {requestPromised: () => Promise.reject("OVH not configured")};
+try {
+    ovh = require('ovh')({
+        appKey: process.env.OVH_APPLICATION_KEY,
+        appSecret: process.env.OVH_APPLICATION_SECRET,
+        consumerKey: process.env.OVH_CONSUMER_KEY
+    });
+}
+catch (e) {
+}
 
 const common = {
     ovh,
