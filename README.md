@@ -35,7 +35,7 @@ coh-about
 ## Query a certificate
 
 ```bash
-certbot certonly --manual --preferred-challenges=dns --manual-auth-hook coh-auth --manual-cleanup-hook coh-cleanup -d example.com -d www.example.com
+certbot certonly --manual --preferred-challenges=dns --manual-auth-hook coh-auth --manual-cleanup-hook coh-cleanup --manual-public-ip-logging-ok -d example.com -d www.example.com
 ```
 
 ## Renew certificates
